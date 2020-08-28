@@ -1,0 +1,91 @@
+.left-column {
+  background-image: url(/assets/img/halekulani_venue_night.jpg);
+}
+
+/* Separators
+---------------------------------- */
+/* Medium devices (desktops, tablets, 992px and up) */
+.separator-2 {
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  height: 1px;
+}
+
+.separator-2:after {
+  height: 1px;
+  background: #d1d1d1;
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.12) 35%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.18)), color-stop(35%, rgba(0, 0, 0, 0.12)), color-stop(70%, rgba(0, 0, 0, 0.05)), color-stop(100%, transparent));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.12) 35%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.12) 35%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.12) 35%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.12) 35%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  content: "";
+  width: 100%;
+}
+
+.dark-bg .separator-2:after {
+  background: #666666;
+  background: -moz-linear-gradient(left, #666666 0%, #555555 35%, #444444 70%, #373737 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #666666), color-stop(35%, #555555), color-stop(70%, #444444), color-stop(100%, #373737));
+  background: -webkit-linear-gradient(left, #666666 0%, #555555 35%, #444444 70%, #373737 100%);
+  background: -o-linear-gradient(left, #666666 0%, #555555 35%, #444444 70%, #373737 100%);
+  background: -ms-linear-gradient(left, #666666 0%, #555555 35%, #444444 70%, #373737 100%);
+  background: linear-gradient(to right, #666666 0%, #555555 35%, #444444 70%, #373737 100%);
+}
+
+#footer.dark .separator-2:after {
+  background: #444444;
+  background: -moz-linear-gradient(left, #444444 0%, #393939 35%, #323232 70%, #222222 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #444444), color-stop(35%, #393939), color-stop(70%, #323232), color-stop(100%, #222222));
+  background: -webkit-linear-gradient(left, #444444 0%, #393939 35%, #323232 70%, #222222 100%);
+  background: -o-linear-gradient(left, #444444 0%, #393939 35%, #323232 70%, #222222 100%);
+  background: -ms-linear-gradient(left, #444444 0%, #393939 35%, #323232 70%, #222222 100%);
+  background: linear-gradient(to right, #444444 0%, #393939 35%, #323232 70%, #222222 100%);
+}
+
+.light-translucent-bg .separator-2:after,
+.two-col-translucent-bg .container > .row > div .separator-2:after,
+.dark.separator-2:after {
+  background: rgba(0, 0, 0, 0.5);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, transparent 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(35%, rgba(232, 232, 232, 0.4)), color-stop(70%, rgba(232, 232, 232, 0.2)), color-stop(100%, transparent));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, transparent 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, transparent 100%);
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, transparent 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, transparent 100%);
+}
+
+.default-bg .separator-2:after,
+.default-translucent-bg .separator-2:after,
+.dark-translucent-bg .separator-2:after,
+.light.separator-2:after {
+  background: rgba(255, 255, 255, 0.5);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(35%, rgba(232, 232, 232, 0.4)), color-stop(70%, rgba(232, 232, 232, 0.2)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Medium devices (desktops, tablets, 992px and up) */
+@media (min-width: 992px) {
+  .two-col-translucent-bg .container > .row > div + div .separator-2:after {
+    background: rgba(255, 255, 255, 0.5);
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(35%, rgba(232, 232, 232, 0.4)), color-stop(70%, rgba(232, 232, 232, 0.2)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, rgba(232, 232, 232, 0.4) 35%, rgba(232, 232, 232, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+p {
+  letter-spacing: 1px !important;
+}

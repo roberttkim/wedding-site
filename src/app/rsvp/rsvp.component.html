@@ -1,0 +1,133 @@
+<div class="background"></div>
+
+<div class="column-container">
+
+  <!--- Left Content -->
+  <div class="col-sm-6 left-column">
+    <div class="left-column-overlay"></div>
+    <img src="/assets/img/logo_white.png" alt="White Logo" class="left-column-logo" />
+  </div>
+  <!--- End Left Content -->
+
+  <!--- Right Content -->
+  <div class="col-sm-6 right-column">
+    <div class="right-container">
+
+      <div *ngIf="!isCompleted">
+
+        <h1 class="text-center">RSVP</h1>
+        <hr class="fancy-hr">
+        <p class="text-center">PLEASE RESPOND BY NOVEMBER 01, 2020</p>
+        <p class="text-center spacer-1">2020年11月01日までに御回答お願いします。</p>
+
+        <!-- Code Form Component -->
+        <code-form (guestEvent)="getGuest($event)"></code-form>
+        <!-- End Code Form Component -->
+
+        <!-- Guest Form Wrapper -->
+        <div *ngIf="guest">
+          <div class="spacer-padding-1"></div>
+          <h2 class="welcome-user text-center spacer-2">Aloha, {{guest.firstName}} {{guest.lastName}}.</h2>
+
+          <form id="guest-form" [formGroup]="guestForm" (ngSubmit)="updateGuest(guestForm.value)">
+            <div class="form-group">
+              <label class="control-label" for="email">E-MAIL ADDRESS / メールアドレス *</label>
+              <input id="email" name="email" type="email" class="form-control" autocomplete="off"
+                [formControl]="guestForm.controls['email']" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="attending">WILL YOU BE ATTENDING? / 出席 *</label>
+              <div *ngFor="let attendingOption of attendingOptions">
+                <input id="attending{{attendingOption.display}}" name="attending" type="radio"
+                  formControlName="attending" [value]="attendingOption.value" />
+                <label for="attending{{attendingOption.display}}">
+                  <span class="input-font">{{attendingOption.display}}</span>
+                </label>
+              </div>
+            </div>
+
+            <div [hidden]="!guestForm.get('attending').value">
+              <div class="form-group">
+                <label class="control-label" for="address">HOME ADDRESS / 住所 *</label>
+                <input id="address" name="address" type="text" class="form-control" autocomplete="off"
+                  [formControl]="guestForm.controls['address']" />
+              </div>
+
+              <div [hidden]="guest.guestCountMax === 1">
+                <div class="form-group">
+                  <label class="control-label" for="guestCountActual">NUMBER OF GUESTS (INCLUDING YOURSELF) / 人数 *</label>
+                  <div *ngFor="let numberOfGuest of numberOfGuests">
+                    <input id="guestCountActual{{numberOfGuest}}" name="guestCountActual" type="radio"
+                      formControlName="guestCountActual" [value]="numberOfGuest" />
+                    <label for="guestCountActual{{numberOfGuest}}">
+                      <span class="input-font">{{numberOfGuest}}</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div *ngIf="guestForm.get('guestCountActual').value">
+                  <div formArrayName="additionalGuests">
+                    <p>
+                      PLEASE FILL OUT THE FOLLOWING INFORMATION FOR YOUR ADDITIONAL GUESTS
+                    </p>
+                    <p>
+                      御出席者全員のお名前を御記入ください。
+                    </p>
+                    <div *ngFor="let additionalGuest of guestForm.controls.additionalGuests.controls; let i=index">
+                      <div [formGroupName]="i">
+                        <div [formGroup]="additionalGuestForms[i]">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <p>GUEST #{{i+1}}</p>
+                            </div>
+                            <div class="col-xs-6 guest-name">
+                              <div class="form-group">
+                                <label class="control-label" for="guestFirstName">FIRST NAME / 名前 *</label>
+                                <input id="guestFirstName" type="text" class="form-control" formControlName="firstName" />
+                              </div>
+                            </div>
+                            <div class="col-xs-6 guest-name">
+                              <div class="form-group">
+                                <label class="control-label" for="guestLastName">LAST NAME / 名字 *</label>
+                                <input id="guestLastName" type="text" class="form-control" formControlName="lastName" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button id="guest-submit" type="submit" aria-label="Submit Guest Form" class="btn btn-default btn-block" [disabled]="!guestForm.valid">
+              <div *ngIf="!isLoading"><i class=""></i>&nbsp;SUBMIT</div>
+              <img *ngIf="isLoading" height=24 src="/assets/img/loading_heart.gif" alt="Loading Heart" />
+            </button>
+            <p class="has-error help-block" *ngIf="!guestForm.valid">
+              {{guestFormError.message}}
+            </p>
+            <div class="spacer-4"></div>
+          </form>
+        </div>
+      </div>
+      <!-- End Guest Form Wrapper -->
+
+      <div *ngIf="isCompleted">
+        <h1 class="text-center">MAHALO!</h1>
+        <hr class="fancy-hr">
+        <p class="details">
+          Thank you so much for submitting your response. A confirmation email should be sent shortly. Please
+          <a class="details-link" routerLink="/info">click here</a> for the schedule, dress code, etc. of the wedding.
+          <br />
+          <br />
+          御回答頂きありがとうございます。御記入頂きましたメールアドレスにお送りします為、ご確認お願い致します。
+          また、結婚式に関する情報(当日のスケジュール、服装、会場詳細等)は<a class="details-link" routerLink="/info">こちら</a>より御確認頂けますと幸いです。
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Right Content -->
+
+</div>

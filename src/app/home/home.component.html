@@ -1,0 +1,41 @@
+<div class="home-container">
+  <div class="col-sm-12 col-md-12">
+    <div class="home-details text-center">
+      <div class="intro">PLEASE JOIN US FOR THE WEDDING OF</div>
+      <div class="intro-name">MICHAEL & ERIKO URANAKA</div>
+      <img src="/assets/img/logo_gradient_new.png" alt="Gradient Logo" class="logo spacer-1"/>
+      <div class="details">
+        <h2>FRIDAY, DECEMBER 04, 2020</h2>
+        <h2>FIVE O' CLOCK IN THE EVENING</h2>
+        <h2>at TBD</h2>
+      </div>
+
+      <button class="main-link-button" routerLink="/rsvp">
+        RSVP HERE
+      </button>
+
+      <div class="spacer-2">
+        <a class="details-link" routerLink="/info">
+          CLICK HERE FOR WEDDING DETAILS
+        </a>
+      </div>
+
+      <div class="countdown">
+        <countdown [text]="textFormat" [units]="units" [end]="endDate"></countdown>
+      </div>
+      <div class="spacer-4"></div>
+    </div>
+
+    <ul class="home-slideshow">
+      <li>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+      </li>
+    </ul>
+  </div>
+</div>

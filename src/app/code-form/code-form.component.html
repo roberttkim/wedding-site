@@ -1,0 +1,19 @@
+<!-- Code Form Wrapper -->
+<form id="code-form" [formGroup]="codeForm" (ngSubmit)="getGuest(codeForm.value)">
+<div class="input-group">
+    <div class="form-group">
+      <input id="code" aria-label="Enter Code" type="tel" class="form-control" placeholder="ENTER YOUR CODE" autocomplete="off"
+              [formControl]="codeForm.controls['code']" />
+    </div>
+    <span class="input-group-btn">
+      <button id="code-submit" type="submit" aria-label="Submit Code" class="btn btn-default btn-block code" [disabled]="!codeForm.valid">
+          <i *ngIf="!isLoading" class="fa fa-chevron-right"></i>
+          <img *ngIf="isLoading" height=24 src="/assets/img/loading_heart.gif" alt="Loading Heart" />
+      </button>
+    </span>
+</div>
+<p class="has-error help-block" *ngIf="!codeForm.controls['code'].valid">
+    {{codeFormError.message}}
+</p>
+</form>
+<!-- End Code Form Wrapper -->

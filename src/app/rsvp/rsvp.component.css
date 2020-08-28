@@ -1,0 +1,20 @@
+.left-column {
+  background-image: url(/assets/img/halekulani_venue.jpg);
+}
+
+.details-link {
+  color: #337ab7;
+}
+
+.details {
+  text-align: justify;
+  line-height: 1.72;
+}
+
+.welcome-user {
+  letter-spacing: 1px;
+}
+
+.guest-name {
+  margin-top: 0px !important;
+}

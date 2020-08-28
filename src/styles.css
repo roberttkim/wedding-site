@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto&display=swap');
+
+/*=======================
+        General
+=======================*/
+html,
+body {
+  font-family: 'Libre Baskerville', serif;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 8px;
+  margin: 2px 0;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 2px;
+  margin: 2px 0;
+}
+
+h4 {
+  line-height: 20px;
+  letter-spacing: 2px;
+  font-size: 16px;
+  margin: 2px 0;
+  font-weight: 400;
+}
+
+#content h4 {
+  font-weight: 700
+}
+
+h6 {
+  margin: 2px 0;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+hr.fancy-hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+p {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1.5px;
+  margin-top: 15px;
+}
+
+a,
+a:hover {
+  color: #363636
+}
+
+.space {
+  padding: 25px
+}
+
+span.meta-date,
+span.meta-author,
+span.commenter-name {
+  font-size: 12px;
+  font-style: italic;
+}
+
+span.plogo {
+  font-family: 'Leckerli One', cursive;
+  font-size: 24px;
+}
+
+span.logo {
+  font-family: 'Leckerli One', cursive;
+  font-size: 30px;
+  line-height: 10px;
+  margin-bottom: -20px;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*=======================
+         Spacers
+=======================*/
+.spacer-1 {
+  margin-bottom: 12px;
+}
+
+.spacer-2 {
+  margin-bottom: 24px;
+}
+
+.spacer-3 {
+  margin-bottom: 36px;
+}
+
+.spacer-4 {
+  margin-bottom: 48px;
+}
+
+.spacer-padding-1 {
+  padding-bottom: 12px;
+}
+
+.spacer-padding-2 {
+  padding-bottom: 24px;
+}
+
+.spacer-padding-3 {
+  padding-bottom: 36px;
+}
+
+.spacer-padding-4 {
+  padding-bottom: 48px;
+}
+
+/*=======================
+       Page Layout
+=======================*/
+#fullscreen {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#fullscreen > .container,
+#fullscreen > .container > .row {
+  height: 100%
+}
+
+.modalfullscreen {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#sidebar.blog {
+  background: #3f4446;
+  height: 100%;
+  min-height: 600px;
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
+}
+
+#sidebar .featured-img img {
+  opacity: 0.20;
+  height: 100%;
+  position: relative;
+  min-height: 710px;
+  transform: translateX(-200px) translateY(0px);
+  -webkit-transform: translateX(-200px) translateY(0px);
+  -moz-transform: translateX(-230px) translateY(0px);
+  -ms-transform: translateX(-200px) translateY(0px);
+  -o-transform: translateX(-200px) translateY(0px);
+}
+
+#page-detail {
+  color: #e8e8e8 !important;
+  padding-top: 18%;
+}
+
+#page-detail hr {
+  width: 60px;
+  text-align: left;
+  height: 5px;
+  border-bottom: 1.5px solid #e8e8e8;
+  border-top: transparent;
+  color: #e8e8e8;
+  margin: 0;
+}
+
+ul.tags {
+  -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
+}
+
+ul.tags li {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+ul.tags li::after {
+  content: ' -';
+  padding-left: 5px;
+}
+
+ul.tags li:last-child:after {
+  content: ''
+}
+
+ul.social-links li,
+ul.social-links li a {
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #e8e8e8 !important;
+  transition: all .2s ease-in-out;
+}
+
+ul.social-links li {
+  padding: 5px 15px 0px 0px
+}
+
+ul.social-links li a:hover {
+  transform: scale(1.5)
+}
+
+/* Right Content */
+#content {
+  height: 100%;
+  padding-bottom: 15%;
+  padding-top: 7%;
+}
+
+#content .text {
+  padding: 15px 5% 5%
+}
+
+/*=======================
+        Preloader
+=======================*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff; /* change if the mask should have another color then white */
+  z-index: 9999; /* makes sure it stays on top */
+}
+
+#status {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  left: 0%; /* centers the loading animation horizontally one the screen */
+  top: 15%; /* centers the loading animation vertically one the screen */
+  background-image: url(/assets/img/loading.gif); /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  /*margin: -100px 0 0 -100px; */ /* is width and height divided by two */
+}
+
+/*=======================
+  Off Canvas - Side Menu
+=======================*/
+#menu {
+  padding-top: 40px;
+  z-index: 99999;
+  color: #e8e8e8;
+  cursor: pointer;
+}
+
+#home #menu {
+  color: #ffffff
+}
+
+#menu:hover {
+  color: #777
+}
+
+.navmenu-default,
+.navbar-default .navbar-offcanvas {
+  background: linear-gradient(#26292a, rgba(38, 41, 42, 1)), url(/assets/img/pattern.png);
+  background-size: cover;
+  background-position: -200% 30%;
+  text-align: center;
+  border-color: transparent;
+}
+
+.navmenu,
+.navbar-offcanvas {
+  width: 230px;
+  height: auto;
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 0px;
+}
+
+.navmenu-default .navmenu-nav > li > a,
+.navbar-default .navbar-offcanvas .navmenu-nav > li > a {
+  color: #e8e8e8;
+  letter-spacing: 2px;
+}
+
+ul.navmenu-nav li:hover {
+  color: #555;
+  background-color: #e7e7e7;
+}
+
+.navmenu-brand {
+  color: #e8e8e8 !important;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 4px;
+  line-height: 20px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  height: 80px;
+}
+
+.navmenu img.user-img {
+  height: 55px;
+  margin-top: 50px;
+}
+
+.nav > li {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #333333;
+}
+
+ul.social-media li,
+ul.social-media li > a {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  line-height: 18px;
+  color: #e8e8e8 !important;
+  font-weight: 400;
+}
+
+ul.social-links {
+  -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
+}
+
+ul.social-media {
+  margin-top: 40px;
+  -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
+}

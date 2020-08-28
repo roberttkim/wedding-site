@@ -1,0 +1,24 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_VERSION: "12.18.3"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo "Enviroment:" $DEPLOY_ENV
+      - echo "Node Version:" $NODE_VERSION
+      - echo "Bucket Name:" $BUCKET_NAME
+      - echo "CF Distribution ID:" $CF_DISTRIBUTION_ID
+      - n $NODE_VERSION
+      - npm i -g --unsafe-perm @angular/cli@10.0.3
+      - npm i
+  build:
+    commands:
+      - ng build --configuration=$DEPLOY_ENV
+      - aws s3 sync --exclude "*" --include "*.html" --content-type "text/html; charset=utf-8" --delete ./dist "s3://$BUCKET_NAME/"
+      - aws s3 sync --include "*" --exclude "*.html" --delete ./dist  "s3://$BUCKET_NAME/"
+      - aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths "/*"
